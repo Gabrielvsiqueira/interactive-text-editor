@@ -4,15 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de Documentos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+        </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Edito de texto</h1>
+            <h1>Editor de textos</h1>
         </header>
-        <div>
-            <form action=""></form>
+        <hr>
+        <div class="menu">
+            <input type="text" id="nome-documentos" placeholder="Nome do documento">
+            <button>Salvar arquivo</button>
+                <button>.txt</button>
+                <button>.html</button>
         </div>
+        <div class="feramentas">
+            <button onclick="formatText('bold')">B</button>
+            <button onclick="formatText('italic')">I</button>
+            <button onclick="formatText('underline')">U</button>  
+            <select name="select-alinhamento" id="fonte">
+                <option> Alinhamento</option>
+                <option value="esquerda">alinhar a esquerda</option>
+                <option value="direita">alinhar a direita</option>
+                <option value="esquerda">centralizar</option>
+                <option value="justificado">justificado</option>
+            </select>
+            <select name="select-cor" id="cor">
+                <option >Cor do texto</option>
+                <option value="vermelho">vermelho</option>
+                <option value="verde">verde</option>
+                <option value="azul">azul</option>
+            </select>
+            <select name="seelct-fonte" id="fonte">
+                <option value="">fontes</option>
+                <option value="arial">Arial</option>
+                <option value="time">Times New Roman</option>
+            </select>
+        </div>
+        <div id="editor" contenteditable="true"> </div>
+    <footer>
+        <p>Desenvolvido por Gabriel Vitor Siqueira</p>
+        <a href="https://www.linkedin.com/in/gabriel-vitor-siqueira/" target="_blank">Linkdin</a>
+        <a href="https://github.com/Gabrielvsiqueira" target="_blank">Github</a>
+    </footer>
     </main>
 </body>
+<script src="script.js"></script>
 </html>
