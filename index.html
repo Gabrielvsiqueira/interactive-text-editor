@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de Documentos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
         </style>
@@ -12,43 +13,50 @@
 <body>
     <main>
         <header>
-            <h1>Editor de textos</h1>
+            <h1>Editor de texto</h1>
         </header>
-        <hr>
         <div class="menu">
             <input type="text" id="nome-documentos" placeholder="Nome do documento">
-            <button>Salvar arquivo</button>
-                <button>.txt</button>
-                <button>.html</button>
+            <button onclick="salvarArquivo()">Salvar arquivo</button>
+            <button onclick="baixarArquivo('txt')">.txt</button>
+            <button onclick="baixarArquivo('html')">.html</button>
         </div>
         <div class="feramentas">
             <button onclick="formatText('bold')">B</button>
             <button onclick="formatText('italic')">I</button>
             <button onclick="formatText('underline')">U</button>  
-            <select name="select-alinhamento" id="fonte">
+
+            <select id="fonte"  onchange="alterarFonte(this.value)">
+                <option value="">fontes</option>
+                <option value="arial">Arial</option>
+                <option value="time">Times New Roman</option>
+            </select>
+
+            <select id="alinhamento" onchange="alterarAlinhamento(this.value)">
                 <option> Alinhamento</option>
                 <option value="esquerda">alinhar a esquerda</option>
                 <option value="direita">alinhar a direita</option>
                 <option value="esquerda">centralizar</option>
                 <option value="justificado">justificado</option>
             </select>
-            <select name="select-cor" id="cor">
+
+            <select id="cor" onchange="alterarCor(this.value)">
                 <option >Cor do texto</option>
                 <option value="vermelho">vermelho</option>
                 <option value="verde">verde</option>
                 <option value="azul">azul</option>
             </select>
-            <select name="seelct-fonte" id="fonte">
-                <option value="">fontes</option>
-                <option value="arial">Arial</option>
-                <option value="time">Times New Roman</option>
-            </select>
         </div>
+
         <div id="editor" contenteditable="true"> </div>
+
     <footer>
         <p>Desenvolvido por Gabriel Vitor Siqueira</p>
-        <a href="https://www.linkedin.com/in/gabriel-vitor-siqueira/" target="_blank">Linkdin</a>
-        <a href="https://github.com/Gabrielvsiqueira" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/gabriel-vitor-siqueira/" target="_blank">
+            <i class="ti ti-brand-linkedin"></i>
+        </a>
+        <a href="https://github.com/Gabrielvsiqueira" target="_blank">
+            <i class="ti ti-brand-github"></i>
     </footer>
     </main>
 </body>

@@ -1,18 +1,20 @@
-function formatText(command) {
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return;
+function salvarArquivo() {
+    const name = document.getElementById("nome-documentos").value || "Sem Nome";
+    const content = document.getElementById("editor").innerHTML;
+    localStorage.setItem(name, content);
+    alert("Documento salvo!");
+}
 
-    const range = selection.getRangeAt(0);
-    const span = document.createElement("span");
+function baixarArquivo(type) {
+    let content = document.getElementById("editor").innerHTML;
+    let filename = document.getElementById("nome-documentos").value || "documento";
+    
+    let blob = type === "txt" 
+        ? new Blob([content], { type: "text/plain" }) 
+        : new Blob([content], { type: "text/html" });
 
-    if (command === "bold") {
-        span.style.fontWeight = "bold";
-    } else if (command === "italic") {
-        span.style.fontStyle = "italic";
-    } else if (command === "underline") {
-        span.style.textDecoration = "underline";
-    }
-
-    span.appendChild(range.extractContents()); // Mantém o texto original
-    range.insertNode(span); // Insere o novo elemento formatado
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = filename + "." + type;
+    link.click();
 }
