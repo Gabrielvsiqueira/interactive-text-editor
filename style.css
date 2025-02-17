@@ -1,4 +1,3 @@
-/* Reset e Configuração Geral */
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +7,11 @@
     color: #F5E1C8;
 }
 
-/* Fundo elegante com gradiente */
 body {
     background-color: #3e2c2c;
     background-image: radial-gradient(circle, rgba(78, 49, 49, 0.8) 0%, rgba(30, 20, 20, 0.9) 100%);
 }
 
-/* Header */
 header {
     width: 100%;
     height: 150px;
@@ -26,7 +23,6 @@ header {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Menu */
 .menu {
     display: flex;
     justify-content: center;
@@ -36,7 +32,6 @@ header {
     font-size: 20px;
 }
 
-/* Ferramentas */
 .feramentas {
     padding-top: 30px;
     display: flex;
@@ -44,7 +39,6 @@ header {
     gap: 15px;
 }
 
-/* Editor */
 #editor {
     border: 3px solid rgba(245, 225, 200, 0.3);
     margin: 50px auto;
@@ -56,7 +50,6 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Botões */
 button {
     width: 120px;
     height: 45px;
@@ -70,7 +63,6 @@ button {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover e Active nos botões */
 button:hover {
     background: linear-gradient(to right, #F5E1C8, #c2a07a);
     color: #7e5c5cbc;
@@ -82,7 +74,6 @@ button:active {
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Inputs e Select */
 input, select {
     width: 200px;
     height: 40px;
@@ -92,12 +83,4 @@ input, select {
     border-radius: 10px;
     background-color: rgba(245, 225, 200, 0.2);
     color: #F5E1C8;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Foco nos inputs */
-input:focus, select:focus {
-    border-color: #F5E1C8;
-    background-color: rgba(245, 225, 200, 0.4);
 }

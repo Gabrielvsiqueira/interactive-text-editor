@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-        </style>
+    </style>
 </head>
 <body>
     <main>
@@ -17,39 +17,37 @@
         </header>
         <div class="menu">
             <input type="text" id="nome-documentos" placeholder="Nome do documento">
-            <button onclick="salvarArquivo()">Salvar arquivo</button>
-            <button onclick="baixarArquivo('txt')">.txt</button>
-            <button onclick="baixarArquivo('html')">.html</button>
+            <button onclick="salvarArquivo()">Salvar</button>
+            <div class="dropdowns">
+                <button onclick="baixarArquivo('txt')">Baixar .txt</button>
+                <button onclick="baixarArquivo('html')">Baixar .html</button>
+            </div>
         </div>
         <div class="feramentas">
-            <button onclick="formatText('bold')">B</button>
-            <button onclick="formatText('italic')">I</button>
-            <button onclick="formatText('underline')">U</button>  
+            <button onclick="alterarEstilo('bold')">B</button>
+            <button onclick="alterarEstilo('italic')">I</button>
+            <button onclick="alterarEstilo('underline')">U</button>
 
             <select id="fonte"  onchange="alterarFonte(this.value)">
-                <option value="">fontes</option>
                 <option value="arial">Arial</option>
-                <option value="time">Times New Roman</option>
+                <option value="times">Times New Roman</option>
             </select>
 
             <select id="alinhamento" onchange="alterarAlinhamento(this.value)">
-                <option> Alinhamento</option>
-                <option value="esquerda">alinhar a esquerda</option>
-                <option value="direita">alinhar a direita</option>
-                <option value="esquerda">centralizar</option>
-                <option value="justificado">justificado</option>
+                <option value="left">Esquerda</option>
+                <option value="right">Direita</option>
+                <option value="center">Centralizado</option>
+                <option value="justify">Justificado</option>
             </select>
 
             <select id="cor" onchange="alterarCor(this.value)">
-                <option >Cor do texto</option>
-                <option value="vermelho">vermelho</option>
-                <option value="verde">verde</option>
-                <option value="azul">azul</option>
+                <option value="red">Vermelho</option>
+                <option value="green">Verde</option>
+                <option value="blue">Azul</option>
             </select>
         </div>
 
-        <div id="editor" contenteditable="true"> </div>
-
+        <div id="editor" contenteditable="true"></div>
     </main>
 </body>
 <script src="script.js"></script>
