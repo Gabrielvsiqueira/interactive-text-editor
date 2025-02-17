@@ -1,18 +1,24 @@
+/* Reset e Configuração Geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Marcellus", serif;
     font-style: normal;
-    background-color: #4e3131bc;
     color: #F5E1C8;
 }
 
+/* Fundo elegante com gradiente */
+body {
+    background-color: #3e2c2c;
+    background-image: radial-gradient(circle, rgba(78, 49, 49, 0.8) 0%, rgba(30, 20, 20, 0.9) 100%);
+}
+
+/* Header */
 header {
     width: 100%;
     height: 150px;
     font-size: 38px;
-    color: #F5E1C8;
     text-align: center;
     padding-top: 40px;
     font-weight: bold;
@@ -20,6 +26,7 @@ header {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Menu */
 .menu {
     display: flex;
     justify-content: center;
@@ -29,6 +36,7 @@ header {
     font-size: 20px;
 }
 
+/* Ferramentas */
 .feramentas {
     padding-top: 30px;
     display: flex;
@@ -36,8 +44,9 @@ header {
     gap: 15px;
 }
 
+/* Editor */
 #editor {
-    border: 3px solid rgb(175, 175, 175);
+    border: 3px solid rgba(245, 225, 200, 0.3);
     margin: 50px auto;
     padding: 20px;
     min-height: 700px;
@@ -47,12 +56,13 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Botões */
 button {
     width: 120px;
     height: 45px;
     font-size: 16px;
     font-weight: bold;
-    border: 2px solid rgb(86, 58, 58);
+    border: 2px solid rgba(245, 225, 200, 0.3);
     border-radius: 10px;
     cursor: pointer;
     background-color: transparent;
@@ -60,6 +70,7 @@ button {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover e Active nos botões */
 button:hover {
     background: linear-gradient(to right, #F5E1C8, #c2a07a);
     color: #7e5c5cbc;
@@ -71,11 +82,12 @@ button:active {
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Inputs e Select */
 input, select {
     width: 200px;
     height: 40px;
     font-size: 14px;
-    border: 2px solid rgb(86, 58, 58);
+    border: 2px solid rgba(245, 225, 200, 0.3);
     text-align: center;
     border-radius: 10px;
     background-color: rgba(245, 225, 200, 0.2);
@@ -84,27 +96,8 @@ input, select {
     transition: all 0.3s ease-in-out;
 }
 
+/* Foco nos inputs */
 input:focus, select:focus {
     border-color: #F5E1C8;
     background-color: rgba(245, 225, 200, 0.4);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
-    border-top: 2px solid #F5E1C8;
-    margin-top: 50px;
-}
-
-footer a {
-    color: #F5E1C8;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-footer a:hover {
-    color: #c2a07a;
-    text-decoration: none;
 }
