@@ -21,17 +21,38 @@ function baixarArquivo(type) {
 
 function alterarEstilo(estilo) {
     const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-
     if (!selection.rangeCount) return;
 
-    const span = document.createElement('span');
-    span.style.fontWeight = estilo === 'bold' ? 'bold' : '';
-    span.style.fontStyle = estilo === 'italic' ? 'italic' : '';
-    span.style.textDecoration = estilo === 'underline' ? 'underline' : '';
-    
-    range.surroundContents(span);
+    const range = selection.getRangeAt(0);
+    let parentElement = range.commonAncestorContainer.parentElement;
+
+    // Se o elemento pai for um <span>, reutilizamos ele
+    if (parentElement && parentElement.tagName === "SPAN") {
+        // Alternar o estilo no mesmo span
+        if (estilo === "strong") {
+            parentElement.style.fontWeight = parentElement.style.fontWeight === "strong" ? "" : "strong";
+        } else if (estilo === "italic") {
+            parentElement.style.fontStyle = parentElement.style.fontStyle === "italic" ? "" : "italic";
+        } else if (estilo === "underline") {
+            parentElement.style.textDecoration = parentElement.style.textDecoration === "underline" ? "" : "underline";
+        }
+
+        // Se o span não tiver mais estilos, removê-lo e manter o texto
+        if (!parentElement.style.fontWeight && !parentElement.style.fontStyle && !parentElement.style.textDecoration) {
+            const textNode = document.createTextNode(parentElement.textContent);
+            parentElement.replaceWith(textNode);
+        }
+    } else {
+        // Criar um novo span apenas se não houver um existente
+        const span = document.createElement("span");
+        if (estilo === "bold") span.style.fontWeight = "bold";
+        if (estilo === "italic") span.style.fontStyle = "italic";
+        if (estilo === "underline") span.style.textDecoration = "underline";
+
+        range.surroundContents(span);
+    }
 }
+
 function alterarFonte(fonte) {
     const selection = window.getSelection();
     const range = selection.getRangeAt(0);
@@ -60,4 +81,14 @@ function alterarCor(cor) {
     } else {
         alert('Selecione algum texto primeiro!');
     }
+}
+
+function alterarAlinhamento(alinhamento) {
+    const parentElement = document.getElementById("editor"); 
+    if (parentElement) {
+        parentElement.style.textAlign = alinhamento;
+        console.log("Alinhamento alterado para:", alinhamento);
+    } else{
+        alert('Selecione algum texto primeiro!');  
+    } 
 }
