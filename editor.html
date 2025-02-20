@@ -28,7 +28,7 @@
             <button onclick="alterarEstilo('italic')">I</button>
             <button onclick="alterarEstilo('underline')">U</button>
 
-            <select id="fonte"  onchange="alterarFonte(this.value)">
+            <select id="fonte" onchange="alterarFonte(this.value)">
                 <option value="arial">Arial</option>
                 <option value="times">Times New Roman</option>
             </select>
@@ -45,6 +45,8 @@
                 <option value="green">Verde</option>
                 <option value="blue">Azul</option>
             </select>
+            <button onclick="alterarTamanhoFonte('increase')">A+</button>
+            <button onclick="alterarTamanhoFonte('decrease')">A-</button>
         </div>
 
         <div id="editor" contenteditable="true"></div>

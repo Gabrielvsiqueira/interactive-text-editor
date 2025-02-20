@@ -25,10 +25,8 @@ function alterarEstilo(estilo) {
 
     const range = selection.getRangeAt(0);
     let parentElement = range.commonAncestorContainer.parentElement;
-
-    // Se o elemento pai for um <span>, reutilizamos ele
+ 
     if (parentElement && parentElement.tagName === "SPAN") {
-        // Alternar o estilo no mesmo span
         if (estilo === "strong") {
             parentElement.style.fontWeight = parentElement.style.fontWeight === "strong" ? "" : "strong";
         } else if (estilo === "italic") {
@@ -36,14 +34,11 @@ function alterarEstilo(estilo) {
         } else if (estilo === "underline") {
             parentElement.style.textDecoration = parentElement.style.textDecoration === "underline" ? "" : "underline";
         }
-
-        // Se o span não tiver mais estilos, removê-lo e manter o texto
         if (!parentElement.style.fontWeight && !parentElement.style.fontStyle && !parentElement.style.textDecoration) {
             const textNode = document.createTextNode(parentElement.textContent);
             parentElement.replaceWith(textNode);
         }
     } else {
-        // Criar um novo span apenas se não houver um existente
         const span = document.createElement("span");
         if (estilo === "bold") span.style.fontWeight = "bold";
         if (estilo === "italic") span.style.fontStyle = "italic";
@@ -91,4 +86,18 @@ function alterarAlinhamento(alinhamento) {
     } else{
         alert('Selecione algum texto primeiro!');  
     } 
+}
+
+function alterarTamanhoFonte(acao) {
+    const editor = document.getElementById('editor');
+
+    let tamanhoFonteAtual = window.getComputedStyle(editor).fontSize;
+
+    tamanhoFonteAtual = parseInt(tamanhoFonteAtual.replace('px', ''));
+
+    if (acao === 'increase') {
+        editor.style.fontSize = (tamanhoFonteAtual + 2) + 'px';
+    } else if (acao === 'decrease') {
+        editor.style.fontSize = (tamanhoFonteAtual - 2) + 'px';
+    }
 }
