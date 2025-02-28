@@ -6,7 +6,6 @@
     font-style: normal;
     color: #F5E1C8;
 }
-
 body {
     background-color: #3e2c2c;
     background-image: radial-gradient(circle, rgba(78, 49, 49, 0.8) 0%, rgba(30, 20, 20, 0.9) 100%);
@@ -21,6 +20,10 @@ header {
     font-weight: bold;
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.titulo{
+    font-size: 1.5rem;
 }
 
 .menu {
