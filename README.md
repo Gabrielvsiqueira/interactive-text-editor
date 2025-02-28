@@ -1,6 +1,6 @@
 # ✍️ Editor de Texto Interativo
 Este é um projeto de **Editor de Texto Interativo** desenvolvido utilizando **HTML**, **CSS**, e **JavaScript**. O editor oferece funcionalidades como formatação de texto (negrito, itálico, sublinhado), alteração de fontes, alinhamento, cor do texto e download do conteúdo em formatos `.txt` e `.html`.
-![Preview](img/homepage.jpg)
+![Preview](img/homepage.png)
 ---
 ![Editor](img/editor.png)
 ## 🛠️ Funcionalidades
